@@ -30,7 +30,7 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Validate-ROMs.ps1 -romPath C:\RetroArch\roms -datPath C:\No-Intro\dats -datName "Nintendo - Super Nintendo Entertainment System"
+C:\PS> .\Validate-ROMs.ps1 -romPath C:\emulator\roms -datPath C:\No-Intro\dats -datName "Nintendo - Super Nintendo Entertainment System"
 
 #>
 
