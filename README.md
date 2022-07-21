@@ -2,7 +2,7 @@
 A collection of PowerShell scripts for validating and renaming ROM files from No-Intro format metadata files.
 
 ## Fix NES ROM Headers v2
-Updates NES ROM Headers to use [NES 2.0](https://www.nesdev.org/wiki/NES_2.0) format headers.  Requires a copy of the NES 2.0 database in XML format (available at the [NESDev forums](https://forums.nesdev.org/viewtopic.php?t=19940).)
+Updates NES ROM Headers to use [NES 2.0](https://www.nesdev.org/wiki/NES_2.0) format headers.  Requires a copy of the NES 2.0 database in XML format (available at the [NESDev forums](https://forums.nesdev.org/viewtopic.php?t=19940)).
 
 ## Validate ROMs
 Checks SHA1 hashes against the corresponding [No-Intro .DAT](https://datomatic.no-intro.org) file.  Requires a .DAT file (recommend downloading the daily pack from No-Intro).
