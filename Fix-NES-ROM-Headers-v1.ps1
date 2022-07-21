@@ -28,7 +28,7 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Fix-NES-ROM-Headers.ps1 -romPath C:\RetroArch\roms -nestopiaPath C:\Nestopia\NstDatabase.xml
+C:\PS> .\Fix-NES-ROM-Headers.ps1 -romPath C:\emulator\roms -nestopiaPath C:\Nestopia\NstDatabase.xml
 
 #>
 
