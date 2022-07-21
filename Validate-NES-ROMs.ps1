@@ -26,7 +26,7 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Validate-NES-ROMs.ps1 -romPath C:\RetroArch\roms -datPath C:\No-Intro\dats
+C:\PS> .\Validate-NES-ROMs.ps1 -romPath C:\emulator\roms -datPath C:\No-Intro\dats
 
 #>
 
