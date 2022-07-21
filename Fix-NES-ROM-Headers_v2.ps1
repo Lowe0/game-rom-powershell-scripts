@@ -1,13 +1,13 @@
 ﻿<#
 .SYNOPSIS
 
-Fixes NES ROM headers based on the Nestopia database
+Fixes NES ROM headers based on the NES 2.0 database
 
 .DESCRIPTION
 
 The Fix-NES-ROM-Headers.ps1 script loads the most recent XML file in the specified
 folder, loads each ROM file in the specified folder, SHA1 hashes all but the 
-first 16 bytes, then compares the hash to the Nestopa database.  If a match is 
+first 16 bytes, then compares the hash to the database.  If a match is 
 found, the appropriate NES 2.0 header is constructed from the NES 2.0 database, and
 compared to the existing NES 2.0 header.  If different, the existing header is 
 overwritten with the new header.
@@ -28,7 +28,7 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Fix-NES-ROM-Headers.ps1 -romPath C:\RetroArch\roms -nesXmlPath C:\NES\nes20db.xml
+C:\PS> .\Fix-NES-ROM-Headers.ps1 -romPath C:\emulator\roms -nesXmlPath C:\NES\nes20db.xml
 
 #>
 
