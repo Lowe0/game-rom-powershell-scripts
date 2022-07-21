@@ -23,9 +23,9 @@ Sets the read-only attribute on all files in the folder.  Only tested on Windows
 ## Validate NES ROMs
 > ./validate-nes-ROMs.ps1 -rompath "..\ROMs\Nintendo - Nintendo Entertainment System" -datpath "..\DATs"
 
-#Notes
+# Notes
 These scripts are offered without any warranty.  **Please back up your files before using them.**  These scripts were tested on Windows 10 and 11 only.  These scripts were tested against the author's collection only, not the complete No-Intro sets.
 
-#Known Issues
+# Known Issues
 ## Fix NES Rom Headers v2
 - PRG-ROM exponent-multiplier notation is not implemented.
