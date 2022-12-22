@@ -66,7 +66,7 @@ if (!$nesDb) {
     Write-Host "Loaded NES 2.0 Database file"
 }
 
-$romItems = Get-ChildItem -Path $romPath -File
+$romItems = Get-ChildItem -Path $romPath -File -Recurse
 
 $hashProvider = New-Object -TypeName System.Security.Cryptography.SHA1CryptoServiceProvider
 
