@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
 
 Relocates ROM files to subfolders within a given folder.
@@ -32,6 +32,7 @@ param(
 )
 
 [int] $totalMoved = 0
+[string] $numericPath = "0-9"
 
 
 if (!(Test-Path $romPath)) {
@@ -48,13 +49,22 @@ $romItems = Get-ChildItem -Path $romPath -File -Recurse
 
 foreach ($romFile in $romItems){
     $firstChar = $romFile.Name.Substring(0,1)
-    $targetPath = $romPath + '\' + $firstChar
+    $targetPath = $romPath
+    if ($firstChar -match "^\d$") { 
+        $targetPath = $targetPath + '\' + $numericPath
+    } elseif ($firstChar -match "^\w$") {
+        $targetPath = $targetPath + '\' + $firstChar
+    } else {
+        continue
+    }
     $pathExpected = $targetPath + '\' + $romFile.Name
     $pathActual = $romFile.FullName
     if (!($pathExpected -eq $pathActual)) {
         if (!(Test-Path $targetPath)) {
             New-Item -Path $targetPath -ItemType Directory | Out-Null
         }
+        $fileName = $romFile.Name
+        Write-Host "Moving $fileName..."
         Move-Item -Path $pathActual -Destination $targetPath
         $totalMoved++
     }
