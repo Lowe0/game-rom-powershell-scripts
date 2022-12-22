@@ -75,7 +75,7 @@ else {
     Write-Host "Loaded DAT file: $datName, version: $datVersion" 
 }
 
-$romItems = Get-ChildItem -Path $romPath -File
+$romItems = Get-ChildItem -Path $romPath -File -Recurse
 
 foreach ($romFile in $romItems){
     $sha1 = Get-FileHash -Path $romFile.FullName -Algorithm SHA1
