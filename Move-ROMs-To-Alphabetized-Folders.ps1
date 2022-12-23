@@ -20,11 +20,9 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Set-ROMs-Read-Only.ps1 -romPath C:\RetroArch\roms
+C:\PS> .\Set-ROMs-Read-Only.ps1 -romPath C:\emulator\roms
 
 #>
-
-
 
 param(
     [Parameter(Mandatory=$True)]
@@ -34,22 +32,18 @@ param(
 [int] $totalMoved = 0
 [string] $numericPath = "0-9"
 
+Write-Host $romPathAbsolute
 
 if (!(Test-Path $romPath)) {
     Write-Host "Unable to locate ROM directory.  Exiting..."
     exit
 }
 
-for ($i = 65; $i -le 90; $i++) {
-    $romSubPath = $romPath + '\' + [char]$i
-    
-}
-
 $romItems = Get-ChildItem -Path $romPath -File -Recurse
 
 foreach ($romFile in $romItems){
     $firstChar = $romFile.Name.Substring(0,1)
-    $targetPath = $romPath
+    $targetPath = $romPathAbsolute
     if ($firstChar -match "^\d$") { 
         $targetPath = $targetPath + '\' + $numericPath
     } elseif ($firstChar -match "^\w$") {
