@@ -32,7 +32,7 @@ param(
 [int] $totalMoved = 0
 [string] $numericPath = "0-9"
 
-Write-Host $romPathAbsolute
+[string] $romPathAbsolute = (Resolve-Path $romPath).Path
 
 if (!(Test-Path $romPath)) {
     Write-Host "Unable to locate ROM directory.  Exiting..."
@@ -49,6 +49,7 @@ foreach ($romFile in $romItems){
     } elseif ($firstChar -match "^\w$") {
         $targetPath = $targetPath + '\' + $firstChar
     } else {
+        Write-Host "Skipping File"
         continue
     }
     $pathExpected = $targetPath + '\' + $romFile.Name
