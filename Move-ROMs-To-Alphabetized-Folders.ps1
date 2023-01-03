@@ -30,8 +30,8 @@ param(
 )
 
 [int] $totalMoved = 0
-$folderMap = @{}
 
+$folderMap = @{}
 $folderMap.Add("0","0-9")
 $folderMap.Add("1","0-9")
 $folderMap.Add("2","0-9")
