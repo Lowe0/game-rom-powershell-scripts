@@ -20,7 +20,7 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Set-ROMs-Read-Only.ps1 -romPath C:\RetroArch\roms
+C:\PS> .\Move-ROMs-To-Alphabetized-Folders.ps1 -romPath C:\emulator\roms
 
 #>
 
@@ -78,7 +78,7 @@ if (!(Test-Path $romPath)) {
 
 $romItems = Get-ChildItem -Path $romPath -File -Recurse
 
-foreach ($romFile in $romItems){
+foreach ($romFile in $romItems) {
     $fileName = $romFile.Name
     $firstChar = $fileName.Substring(0,1)
     $targetPath = $romPathAbsolute
