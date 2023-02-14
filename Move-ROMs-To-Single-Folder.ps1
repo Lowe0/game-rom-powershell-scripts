@@ -20,7 +20,7 @@ None. This script does not generate any output.
 
 .EXAMPLE
 
-C:\PS> .\Set-ROMs-Read-Only.ps1 -romPath C:\RetroArch\roms
+C:\PS> .\Move-ROMs-To-Single-Folder.ps1 -romPath C:\emulator\roms
 
 #>
 
