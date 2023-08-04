@@ -36,7 +36,7 @@ if (!(Test-Path $romPath)) {
     exit
 }
 
-$romItems = Get-ChildItem -Path $romPath -File
+$romItems = Get-ChildItem -Path $romPath -File -Recurse
 
 foreach ($romFile in $romItems){
     Set-ItemProperty -Path $romFile.FullName -Name IsReadOnly -Value $true

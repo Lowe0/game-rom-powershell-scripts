@@ -70,7 +70,7 @@ if (!$dat) {
     Write-Host "Loaded DAT file: $datName, version: $datVersion" 
 }
 
-$romItems = Get-ChildItem -Path $romPath -File
+$romItems = Get-ChildItem -Path $romPath -File -Recurse
 
 $hashProvider = New-Object -TypeName System.Security.Cryptography.SHA1CryptoServiceProvider
 
