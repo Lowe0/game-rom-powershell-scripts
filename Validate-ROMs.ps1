@@ -20,6 +20,9 @@ Specifies the to the folder containing No-Intro DAT files.
 .PARAMETER datName
 Specifies the No-Intro System name (matches the DAT file name).
 
+.PARAMETER filePattern
+Specifies the pattern to be used when finding files to be validated.
+
 .INPUTS
 
 None. You cannot pipe objects to this script.
@@ -40,7 +43,9 @@ param(
     [Parameter(Mandatory=$True)]
     [string] $datPath,    
     [Parameter(Mandatory=$True)]
-    [string] $datName
+    [string] $datName,
+    {Parameter (Mandatory=$False)}
+    [string] $filePattern
 )
 
 [int] $totalExamined = 0
@@ -75,7 +80,12 @@ else {
     Write-Host "Loaded DAT file: $datName, version: $datVersion" 
 }
 
-$romItems = Get-ChildItem -Path $romPath -File -Recurse
+if ($filePattern) {
+    $romItems = Get-ChildItem -Path $romPath -Pattern $filePattern -File -Recurse
+}
+else {
+    $romItems = Get-ChildItem -Path $romPath -File -Recurse
+}
 
 foreach ($romFile in $romItems){
     $sha1 = Get-FileHash -Path $romFile.FullName -Algorithm SHA1
